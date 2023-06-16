@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { useHistory } from "react-router-dom";
 import firebase from '../firebase'; // Import your firebase.js file
+import { app, auth } from "../firebase"; // Import the app and auth objects from firebase.js
+
 
 const LoginScreen = () => {
+
+    
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
   
@@ -18,7 +24,7 @@ const LoginScreen = () => {
     const handleSignup = async (e) => {
       e.preventDefault();
       try {
-        await firebase.auth().createUserWithEmailAndPassword(email, password);
+        await auth.createUserWithEmailAndPassword( email, password);
         // Redirect to the desired page after successful signup
       } catch (error) {
         console.error('Signup error:', error);

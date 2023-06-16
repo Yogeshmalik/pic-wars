@@ -1,17 +1,22 @@
 import "./App.css";
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import LoginSignupScreen from './components/LoginScreen';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+} from "react-router-dom";
+import LoginScreen from "./components/LoginScreen";
 // import HomeScreen from './components/HomeScreen';
 
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={LoginSignupScreen} />
+      <Routes>
+        <Route exact path="/" element={<LoginScreen />} />
         {/* <Route path="/home" component={HomeScreen} /> */}
         {/* Add more routes for other app screens */}
-      </Switch>
+      </Routes>
     </Router>
   );
 };
