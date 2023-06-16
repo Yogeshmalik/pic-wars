@@ -1,0 +1,20 @@
+on the HomeScreen component create an app where users can upload, view, and share photos. Above that, randomly fetch 6 peoples' images, their names under it, and the film from all 7 films of starwars from https://swapi.dev/api . 
+ fetch images, names of character and film names from https://swapi.dev/api API. when the user click on the people, it should route to other page with that people's details(name, height, gender, homeworld, small image related to this people). 
+The images uploaded by the user is saved to the firestore and not the fetched data from APIs. 
+the user can see the fetched data from the api and option to upload, view, delete, share images(including caption) uploaded images and its data is stored on firestore. Home button should be there at top of every page except the login page. Logout button should be there under every page(if the user is logged in). show user logged-in Name at the right top of header if the user is logged in. customize the buttons, red color should be for logout and delete, green color should be login and upload button, blue color should be Home button, Details and view photo should be yellow color buttons.
+Implement Firebase Firestore to store image metadata and Firebase Cloud Storage to store user-uploaded images.
+Fetch data from the Star Wars API (https://swapi.dev/api) using Axios to get the names and film details of the Star Wars characters.
+Design a visually appealing photo gallery interface using React components and Tailwind CSS for styling.
+Display the fetched data from the Star Wars API on the home page, showing the images, names, and films of six random characters.
+Implement React Router to navigate to a separate page(Details.js component) when a user clicks on a character. On this page, display the character's details such as name, height, gender, homeworld, and a small image related to the character.
+Provide options for users to upload, view, delete, and share their own images, storing the image data in Firebase Firestore.
+Add a Home button to the header of every page (except the login page) using React Router for easy navigation.
+Include a Logout button beneath each page if the user is logged in, allowing users to sign out from any page.
+Display the logged-in user's name on the top-right corner of the header if the user is logged in.
+Customize the buttons using Tailwind CSS classes, assigning red color for logout and delete buttons, green color for login and upload buttons, and blue color for the Home button. Use yellow color buttons for "Details" and "View Photo" options.
+Style the app using Tailwind CSS classes to ensure a presentable UI.
+Use Axios to send HTTP requests to the Star Wars API and retrieve character data.
+Use Firebase Authentication APIs to handle user logout.
+Access the logged-in user's information to display their name in the header.
+
+if you are not able to fetch from the given URL, then keep asking me to give you the correct URL until you get it right. otherwise go through the url, find JSON and fetch the required details
