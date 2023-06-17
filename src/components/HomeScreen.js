@@ -22,7 +22,7 @@ function HomeScreen() {
 
   const handleLogout = () => {
     auth.signOut().then(() => {
-      navigate("/login");
+      navigate("/");
     });
   };
 
