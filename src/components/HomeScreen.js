@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, firestore } from "../firebase";
+import { auth } from "../firebase";
 
 function HomeScreen() {
   const [user, setUser] = useState(null);
