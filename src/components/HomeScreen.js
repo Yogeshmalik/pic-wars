@@ -59,14 +59,24 @@ function HomeScreen() {
         </div>
       </main>
 
-      <footer className="mt-auto bg-gray-700 py-4 w-full flex justify-center">
+      <footer className="mt-4 mb-0 bg-gray-700 py-4 w-full inline-flex pb-auto justify-between">
         <button
           onClick={handleLogout}
           className="px-6 py-3 text-lg font-semibold bg-red-500 
-          text-white rounded-lg hover:bg-red-600"
+          text-white rounded-lg hover:bg-red-600 mx-auto"
         >
           Logout
         </button>
+        <h1 className=" text-yellow-50 mx-auto font-semibold flex items-center ">
+          MADE BY
+          <a
+            className=" pl-2 ease-out font-bold hover:scale-150 
+            hover:text-[#fD5B61] transition duration-150 "
+            href="https://yogeshmalikportfolio.netlify.app/"
+          >
+            YSM
+          </a>
+        </h1>
       </footer>
     </div>
   );

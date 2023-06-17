@@ -98,7 +98,7 @@ function Shows() {
           </div>
         )}
       </div>
-      <footer className="mt-4 bg-gray-700 py-4 w-full flex flex-col justify-center">
+      <footer className="mt-4 bg-gray-700 py-4 w-full flex  justify-between">
         <button
           onClick={handleLogout}
           className="px-6 py-3 text-lg font-semibold bg-red-500 
@@ -106,7 +106,7 @@ function Shows() {
         >
           Logout
         </button>
-        <h1 className=" text-yellow-50 mx-auto font-semibold pt-5 ">
+        <h1 className=" text-yellow-50 mx-auto font-semibold flex items-center ">
           MADE BY
           <a
             className="inline-block pl-2 ease-out font-bold hover:scale-150 
