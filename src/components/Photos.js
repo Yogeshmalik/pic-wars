@@ -137,8 +137,10 @@ function Photos() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen h-auto justify-between
-    bg-gradient-to-br from-yellow-200 to-purple-300 bg-opacity-75 bg-fixed bg-cover ">
+    <div
+      className="flex flex-col min-h-screen h-auto justify-between
+    bg-gradient-to-br from-red-200 to-blue-400  bg-opacity-75 bg-fixed bg-cover "
+    >
       <header
         className="flex items-center justify-between bg-gradient-to-br from-blue-500 to-red-500 
       bg-opacity-75 bg-fixed bg-cover p-4"
@@ -161,12 +163,16 @@ function Photos() {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center px-4">
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 
+          gap-4 text-center px-4 "
+          >
             {photos.map((photo) => (
               <div
                 key={photo.id}
                 className="p-4 shadow-md mx-auto rounded-xl hover:shadow-2xl w-full
-                bg-gradient-to-br from-red-400 to-green-200 bg-opacity-75 bg-fixed bg-cover "
+                bg-gradient-to-br from-red-400 to-green-200 bg-opacity-75 
+                bg-fixed bg-cover hover:scale-105 transition-transform duration-300"
               >
                 <img
                   src={photo.url}
@@ -193,13 +199,15 @@ function Photos() {
       </main>
 
       <form
-        className=" flex justify-center mt-8 mb-4 p-10 rounded shadow-lg mx-auto hover:shadow-2xl"
+        className=" flex justify-center mt-8 mb-5 p-10 pb-14 rounded-2xl shadow-lg 
+        mx-auto hover:shadow-2xl hover:bg-blue-500 hover:text-white 
+        transition duration-200"
         onSubmit={handleUploadPhoto}
       >
         <div className="flex flex-col items-left">
           <label
             htmlFor="photoInput"
-            className="mt-4 mr-2 text-left inline-flex text-lg font-semibold text-gray-600 mb-2 cursor-pointer"
+            className="mt-4 mr-2 text-left inline-flex text-lg font-semibold mb-2 cursor-pointer"
           >
             Add Photo:
           </label>
@@ -211,9 +219,7 @@ function Photos() {
             className="flex flex-col px-4 py-2 text-sm font-semibold text-green-500 
             hover:text-green-600 border border-l-0 rounded-r-lg bg-gray-100 cursor-pointer"
           />
-          <h3 className="text-lg font-semibold text-gray-600 mb-2">
-            Enter Caption:
-          </h3>
+          <h3 className="text-lg font-semibold mb-2">Enter Caption:</h3>
           <input
             type="text"
             name="caption"
@@ -225,7 +231,8 @@ function Photos() {
           <button
             type="submit"
             className="px-4 py-2 mt-2 text-sm font-semibold text-green-500 
-            hover:text-white hover:bg-green-500 border border-l-0 rounded-r-lg bg-gray-100"
+            hover:text-white hover:bg-green-500 border border-l-0 rounded-r-lg 
+            bg-gray-100 hover:border-green-500"
           >
             Upload
           </button>
