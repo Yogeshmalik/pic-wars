@@ -52,21 +52,23 @@ function Shows() {
 
   return (
     <div>
-      <header className="flex items-center justify-between bg-gradient-to-br from-blue-500 to-red-500 
-      bg-opacity-75 bg-fixed bg-cover p-4">
-        <h2 className="text-white text-2xl font-bold">Shows Gallery</h2>
+      <header
+        className="sticky top-0 z-10 flex items-center justify-between bg-gradient-to-br from-blue-500 to-red-500 
+      bg-opacity-75 bg-fixed bg-cover p-4"
+      >
+        <h2 className="text-white text-lg md:text-2xl font-bold">Shows Gallery</h2>
         {user && <div className="text-white">Welcome, {user.displayName} </div>}
 
         <Link
           to="/home"
-          className="px-6 py-3 text-lg font-semibold 
+          className="px-3 md:px-6 py-2 md:py-3 text-sm md:text-lg font-semibold 
           bg-blue-500 text-white rounded-lg hover:bg-blue-600"
         >
           HOME
         </Link>
       </header>
 
-      <div className="container mx-auto mt-8">
+      <div className="container mx-auto mt-8 px-1">
         <h2 className="text-2xl font-bold mb-4">TV Shows</h2>
 
         {loading ? (
@@ -87,7 +89,7 @@ function Shows() {
                   <img
                     src={character.show.image.medium}
                     alt={character.show.name}
-                    className="w-auto mb-2 rounded h-80 mx-auto"
+                    className="w-auto mb-2 rounded h-48 sm:h-64 md:h-72 lg:h-80 mx-auto"
                   />
                 )}
                 <p className="text-lg font-medium">{character.show.name}</p>
@@ -98,10 +100,10 @@ function Shows() {
           </div>
         )}
       </div>
-      <footer className="mt-4 bg-gray-700 py-4 w-full flex  justify-between">
+      <footer className="sticky bottom-0 mt-4 bg-gray-700 py-2 md:py-4 w-full flex  justify-between">
         <button
           onClick={handleLogout}
-          className="px-6 py-3 text-lg font-semibold bg-red-500 
+          className="px-3 md:px-6 py-1 md:py-3 text-md md:text-lg font-semibold bg-red-500 
           text-white rounded-lg hover:bg-red-600 mx-auto"
         >
           Logout

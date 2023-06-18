@@ -142,14 +142,16 @@ function Photos() {
     bg-gradient-to-br from-red-200 to-blue-400  bg-opacity-75 bg-fixed bg-cover "
     >
       <header
-        className="flex items-center justify-between bg-gradient-to-br from-blue-500 to-red-500 
+        className="sticky top-0 z-10 flex items-center justify-between bg-gradient-to-br from-blue-500 to-red-500 
       bg-opacity-75 bg-fixed bg-cover p-4"
       >
-        <h2 className="text-white text-2xl font-bold">YOGFLIX Photo Gallery</h2>
+        <h2 className="text-white text-lg md:text-2xl font-bold">
+          YOGFLIX Photo Gallery
+        </h2>
         <Link
           to="/home"
-          className="px-6 py-3 text-lg font-semibold 
-          bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          className="px-3 md:px-5 py-2 md:py-3 text-sm md:text-lg font-semibold 
+          bg-blue-500 text-white rounded-lg hover:bg-blue-600 "
         >
           HOME
         </Link>
@@ -242,10 +244,10 @@ function Photos() {
         </div>
       </form>
 
-      <footer className="mt-4 mb-0 bg-gray-700 py-4 w-full inline-flex pb-auto justify-between">
+      <footer className="sticky bottom-0 z-10 mt-4 mb-0 bg-gray-700 py-4 w-full inline-flex pb-auto justify-between">
         <button
           onClick={handleLogout}
-          className="px-6 py-3 text-lg font-semibold bg-red-500 
+          className="px-3 md:px-6 py-1 md:py-3 text-md md:text-lg font-semibold bg-red-500 
           text-white rounded-lg hover:bg-red-600 mx-auto"
         >
           Logout

@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 const LoginScreen = () => {
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loadingLogin, setLoadingLogin] = useState(false);
+  const [loadingSignup, setLoadingSignup] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
   const navigate = useNavigate();
 
   const emailRef = useRef(null);
@@ -12,7 +14,7 @@ const LoginScreen = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setLoadingSignup(true);
 
     try {
       const userCredential = await auth.createUserWithEmailAndPassword(
@@ -21,16 +23,22 @@ const LoginScreen = () => {
       );
 
       console.log(userCredential);
-      setLoading(false);
+      setLoadingSignup(false);
+      setSuccessMessage("Signup successful...");
+
+      setTimeout(() => {
+        setSuccessMessage("");
+        navigate("/home");
+      }, 2000);
     } catch (error) {
-      setLoading(false);
+      setLoadingSignup(false);
       setError("Signup Error: " + error.message);
     }
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setLoadingLogin(true);
 
     try {
       const userCredential = await auth.signInWithEmailAndPassword(
@@ -39,28 +47,31 @@ const LoginScreen = () => {
       );
 
       console.log(userCredential);
-      setLoading(false);
+      setLoadingLogin(false);
+      setSuccessMessage("Login successful. Redirecting to home...");
 
-      await auth.currentUser.updateProfile({
-        displayName: userCredential.user.email.split("@")[0],
-      });
-
-      navigate("/home");
+      setTimeout(() => {
+        setSuccessMessage("");
+        navigate("/home");
+      }, 500);
     } catch (error) {
       setError("Login Error: " + error.message);
-      setLoading(false);
+      setLoadingLogin(false);
     }
   };
 
   return (
     <div className="relative flex flex-col justify-between h-screen align-bottom">
       <header className="flex items-center justify-between bg-gray-300 p-4">
-        <h2 className="mx-auto items-center text-2xl font-bold hover:text-red-500">YOGFLIX</h2>
+        <h2 className="mx-auto items-center text-2xl font-bold hover:text-red-500">
+          YOGFLIX
+        </h2>
       </header>
       <div className="flex flex-col items-center justify-center">
         <div className="bg-white p-10 rounded shadow-lg min-w-[25rem]">
           <h2 className="text-2xl font-bold mb-4">Login / Signup</h2>
           {error && <p className="text-red-500">{error}</p>}
+          {successMessage && <p className="text-green-500">{successMessage}</p>}
           <form className="flex flex-col space-y-4">
             <input
               type="email"
@@ -78,17 +89,17 @@ const LoginScreen = () => {
             />
             <button
               onClick={handleLogin}
-              className="bg-green-500 text-white px-4 py-2 rounded"
-              disabled={loading}
+              className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
+              disabled={loadingLogin}
             >
-              {loading ? "Logging in..." : "Login"}
+              {loadingLogin ? "Logging in..." : "Login"}
             </button>
             <button
               onClick={handleSignup}
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-              disabled={loading}
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+              disabled={loadingSignup}
             >
-              Signup
+              {loadingSignup ? "Signing up..." : "Signup"}
             </button>
           </form>
         </div>

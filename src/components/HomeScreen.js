@@ -32,7 +32,7 @@ function HomeScreen() {
       bg-opacity-75 bg-fixed bg-cover  flex flex-col 
       items-center justify-between h-screen "
     >
-      <header className="text-white bg-blue-600 p-4 mb-4 w-full">
+      <header className="sticky top-0 z-10 text-white bg-blue-600 p-4 mb-4 w-full">
         <h2 className="text-2xl font-bold text-center">Welcome to YOGFLIX</h2>
       </header>
 
@@ -59,10 +59,10 @@ function HomeScreen() {
         </div>
       </main>
 
-      <footer className="mt-4 mb-0 bg-gray-700 py-4 w-full inline-flex pb-auto justify-between">
+      <footer className="sticky bottom-0 z-10 mt-4 mb-0 bg-gray-700 py-4 w-full inline-flex pb-auto justify-between">
         <button
           onClick={handleLogout}
-          className="px-6 py-3 text-lg font-semibold bg-red-500 
+          className="px-3 md:px-6 py-2 md:py-3 text-md md:text-lg font-semibold bg-red-500 
           text-white rounded-lg hover:bg-red-600 mx-auto"
         >
           Logout

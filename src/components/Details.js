@@ -30,9 +30,9 @@ function Details() {
   }
 
   return (
-    <div>
+    <div className="flex flex-col justify-between ">
       <header
-        className="flex items-center justify-between bg-gradient-to-br from-blue-500 to-red-500 
+        className=" sticky top-0 z-10 flex items-center justify-between bg-gradient-to-br from-blue-500 to-red-500 
       bg-opacity-75 bg-fixed bg-cover p-4"
       >
         <h2 className="text-white text-2xl font-bold">Show Details</h2>
@@ -45,8 +45,8 @@ function Details() {
         </Link>
       </header>
 
-      <div className="container mx-auto mt-8">
-        <div className="max-w-lg mx-auto">
+      <div className="container mx-auto mt-8 ">
+        <div className="max-w-lg mx-auto border rounded-lg p-3">
           <h2 className="text-2xl font-bold mb-4 text-center">{show.name}</h2>
           {show.image && show.image.original && (
             <img
@@ -63,18 +63,18 @@ function Details() {
             <p className=" inline-flex">{show.premiered}</p>
             <p className=" inline-flex">Rating: {show.rating.average}</p>
           </div>
-          <p className="py-2 font-semibold">{show.summary}</p>
+          <p className="py-2 font-semibold px-2">{show.summary}</p>
         </div>
       </div>
-      <footer className="relative py-4 w-full flex flex-col justify-center">
+      <footer className="relative py-4 w-full flex flex-col justify-between">
         <Link
           to="/shows"
           className="mx-auto px-6 py-3 text-lg font-semibold 
-          bg-green-500 text-white rounded-lg hover:bg-green-600"
+          bg-green-500 text-white rounded-lg hover:bg-green-600 mb-20"
         >
           Back to Shows
         </Link>
-        <div className=" bg-gray-200 text-center p-5 mt-4">
+        <div className="fixed bottom-0 w-full  bg-gray-200 text-center p-5 ">
           <h1 className="inline-block font-semibold ">
             MADE BY
             <a
